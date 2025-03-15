@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosso Amor - Miguel & Odara</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-align: center;
+            background-color: #220044;
+            color: #DA70D6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            position: relative;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+            transform: rotate(90deg);
+        }
+        #timer {
+            font-size: 26px;
+            font-weight: bold;
+            background: white;
+            padding: 10px 20px;
+            border-radius: 10px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+            display: inline-block;
+            color: #4B0082;
+        }
+        h1 {
+            font-size: 30px;
+        }
+        .spotify-button {
+            display: inline-block;
+            background-color: #1DB954;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px 20px;
+            border-radius: 25px;
+            margin-top: 20px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .spotify-button:hover {
+            background-color: #17a247;
+        }
+        .love-text {
+            font-size: 20px;
+            background: white;
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            max-width: 80%;
+            margin-top: 20px;
+            color: #4B0082;
+        }
+    </style>
+</head>
+<body>
+    <img src="/mnt/data/darami.jgp.jpg" alt="Nosso Amor">
+    <h1>Miguel & Odara 💜</h1>
+    <div id="timer"></div>
+    <div class="love-text">
+        "Desde que te conheci, tudo ganhou mais sentido. O tempo ao seu lado voa, mas cada instante é gravado no meu coração. Você é a minha felicidade, meu porto seguro, meu amor infinito. Que nossa história continue sendo escrita com carinho, sorrisos e muito amor. Te amo para sempre! 💜"
+    </div>
+    <a class="spotify-button" href="https://open.spotify.com/intl-pt/track/4f7phfIoOpIhSI8tIK11f6?si=fe6b77853ee64f35" target="_blank">🎵 Ouça Nossa Música</a>
+
+    <script>
+        function atualizarTempo() {
+            const dataInicial = new Date("2024-06-12T00:00:00");
+            const agora = new Date();
+            let diferenca = agora - dataInicial;
+
+            let meses = Math.floor(diferenca / (1000 * 60 * 60 * 24 * 30));
+            diferenca %= (1000 * 60 * 60 * 24 * 30);
+            let dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
+            diferenca %= (1000 * 60 * 60 * 24);
+            let horas = Math.floor(diferenca / (1000 * 60 * 60));
+            diferenca %= (1000 * 60 * 60);
+            let minutos = Math.floor(diferenca / (1000 * 60));
+
+            document.getElementById("timer").innerText = `${meses} meses, ${dias} dias, ${horas} horas e ${minutos} minutos de amor 💜`;
+        }
+        atualizarTempo();
+        setInterval(atualizarTempo, 60000);
+    </script>
+</body>
+</html>
